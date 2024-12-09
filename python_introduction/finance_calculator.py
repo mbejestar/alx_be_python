@@ -1,23 +1,19 @@
-# Get user input for monthly income
-monthly_income = float(input("Enter your monthly income: "))
+# Function to calculate monthly and yearly savings  
+def calculate_savings():  
+    # User Input for Financial Details  
+    monthly_income = float(input("Enter your monthly income: "))  
+    total_expenses = float(input("Enter your total monthly expenses: "))  
 
-# Get user input for total monthly expenses
-total_expenses = float(input("Enter your total monthly expenses: "))
+    # Calculate Monthly Savings  
+    monthly_savings = monthly_income - total_expenses  
 
-# Calculate monthly savings
-monthly_savings = monthly_income - total_expenses
+    # Project Annual Savings  
+    interest_rate = 0.05  # 5% interest rate  
+    projected_savings = (monthly_savings * 12) + (monthly_savings * 12 * interest_rate)  
 
-# Assume annual interest rate of 5%
-annual_interest_rate = 0.05
+    # Output Results  
+    print(f"Your monthly savings are ${monthly_savings:.2f}.")  
+    print(f"Projected savings after one year, with interest, is: ${projected_savings:.2f}.")  
 
-# Calculate total savings after one year (without interest)
-total_savings = monthly_savings * 12
-
-# Calculate earned interest for one year
-earned_interest = total_savings * annual_interest_rate
-
-# Calculate total projected savings (savings + interest)
-projected_savings = total_savings + earned_interest
-
-# Print the final projected savings
-print(f"Your projected savings after one year, including interest, will be: ${projected_savings:.2f}")
+# Run the savings calculation  
+calculate_savings()
